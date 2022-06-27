@@ -1,0 +1,34 @@
+# set up vitrual env
+py -3  -m venv <name (you chose it)> 
+py -3 -m venv venv 
+
+#we are using the global now and  wnat to chage to the virtual one 
+# at vs select view -> command palette-> python select interpreter->enter interpreter path->.\venv\scripts
+
+#terminal need to be virtaul as well
+venv\Scripts\activate.bat
+
+#fastapi
+#install the package
+#pip install fastapi
+#or pip install fastapi[all]
+#at terminal
+pip install fastapi[all]
+
+#to see all the package which we have had install
+pip freeze
+
+#open virtual enviromnet  and go to lib that you can see all the packages
+
+#import from fastapi  at the mainpy
+from fastapi import FastAPI
+
+#create instance 
+app= FastAPI()
+#app= FastAPI(any name your chose or leave it empty)
+
+@app.get("/")
+async def root():
+return {"message": "hello user"}
+
+
