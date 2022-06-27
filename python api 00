@@ -32,3 +32,14 @@ async def root():
 return {"message": "hello user"}
 
 
+#start to web service 
+#uvicorn main:app --reload
+#unicorn main(it's your main.py): app(your instance)
+# in vs terminal 
+uvicorn main:app
+
+
+
+
+
+
