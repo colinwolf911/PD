@@ -1,0 +1,8 @@
+#crud concept
+#create read update delete
+#creat ->post /posts @app.post("/posts")
+#read ->get /get-> /posts/:id @app.post("/posts{id}") /posts @app.post("/posts")
+#update-> put/patch /posts/:id @app.put("/posts{id}")
+#delete -> posts/:id @app.post("/posts/{id}")
+
+
