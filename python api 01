@@ -25,6 +25,12 @@
   
   #postman to test api
   
+  #at postman pratice json
+  #chose body raw
   
+  {
+  "title ": "personal digital online shopping ",
+  "content" :"check out "
+  }
   
   
