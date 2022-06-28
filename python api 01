@@ -111,4 +111,18 @@ class Post(BaseModel):
   "published":"true"
   }
   
+  
+  #optional for users
+  #in vs code 
+  #class -->rating : optional [int]=none
+  class Post(BaseModel):
+  title: str
+  content: str
+  publshed :bool= True
+  rating : optional [int]=none
+  
+  
+  #padanic model into dictories
+  
+  
  
