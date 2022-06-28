@@ -23,6 +23,10 @@
       
   #fastapi goes to find the first match path
   
+  #any time change and it's needed to restart the service 
+  #hit ctrl +c to restart server 
+  
+  
   #postman to test api
   
   #at postman pratice json
@@ -33,4 +37,17 @@
   "content" :"check out "
   }
   
+  
+  
+  #in vs  to retrive the body data
+  #dict=body(...)-->extract body to python dictories and store to -->payload (payload: dict=body(...))
+  
+ #in vs main import body
+from fastapi.params import FastAPI
+  
+ @app.post("/createposts")
+ def create_posts(payload: dict=body(...)):
+ return{""message":"welcome to my api"}
+  
+
   
