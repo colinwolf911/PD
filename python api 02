@@ -23,8 +23,10 @@ class Post(BaseModel):
     content: str
     published: bool=True
     rating: Optional[int] = None
-    
-    
+ 
+#store the data in memory 
+  
+my_posts=[{"title":"title of post1","content":"content of post1","id":1},{"title":"checkout","content":"phone","id":2}]  
 
 @app.get("/")
 async def root():
@@ -47,6 +49,9 @@ def create_posts(post : Post):
   #db it will create id
   #it's after class before the @app
   my_posts= [{"title": "title of post 1","content" :"content of post1","id":1}]
+  
+  
+  
   
   
   
