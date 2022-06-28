@@ -4,5 +4,27 @@
  return{""message":"welcome to my api"}
   
   #any time change and it's needed to restart the service 
-  #hit ctrl +c to restart server 
+  #hit ctrl +c + enter to restart server 
+  
+  #reload by itself automative start server
+  uvicorn main:app --reload 
+  #then save now it's automative refresh
+  
+  
+  #what is path operation 
+  @app.get("/")-->(.)method (/")path
+  def root():-->(root)function
+     return{"message" : "hi there"}
+     
+  #retrive message   @ (instance) def (anyname you like)
+  @app.get("/")
+  def get_post():
+      return{"data": "this is your posts"}
+      
+  #fastapi goes to find the first match path
+  
+  #postman to test api
+  
+  
+  
   
