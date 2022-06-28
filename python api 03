@@ -3,4 +3,11 @@
 #we created the collection in postman 
 #save it
 
-#retriving from individual post 
+#retriving from ONE individual post 
+#@app.get("/posts/{id}") path parameter to theid
+
+
+@app.get("/posts/{id}")
+def get_post(id):
+   print(id)
+   return{"post_detail": f"here is the post{id}"}
