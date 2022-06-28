@@ -90,4 +90,25 @@ class Post(BaseModel):
     
  
  #assigned property is option
+ #class section -->publshed :bool= True
+ 
+ app =FastAPI()
+ 
+ class Post(BaseModel):
+  title: str
+  content: str
+  publshed :bool= True
+  
+ @app.post("/createposts")
+ def create_posts(new_post: Post): 
+    print(new_post.published)
+ return{"data":"new post"} 
+ 
+ #in postman
+   {
+  "title ": "personal digital online shopping ",
+  "content" :"check out ",
+  "published":"true"
+  }
+  
  
