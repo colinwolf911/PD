@@ -57,6 +57,9 @@ python -m uvicorn main:app --reload
  def root():
  return{""message":"welcome to my api"}
   
+  #any time change and it's needed to restart the service 
+  #hit ctrl +c to restart server 
+  
 
 
 
