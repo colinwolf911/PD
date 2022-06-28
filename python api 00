@@ -38,6 +38,27 @@ return {"message": "hello user"}
 # in vs terminal 
 uvicorn main:app
 
+#if (uvicorn main:app) it's not working uvicron trying it in terminal with following code
+python -m uvicorn main:app --reload
+
+
+#path operation 
+#first@app.get("/") # @ it's direction for call the app in fastapi 
+#get passing http method for user to use  to send get method for app to use , there's also different method to use
+#you can searching http method
+#("/")root path -->take us to the url
+#("/login")--> take us to the login url 
+#("/vote")-->take us to the vote url 
+#def root(description name):
+ # return{ } #data return the users and fastapi convert it to jason
+  
+ #changing code to play
+ @app.get("/")
+ def root():
+ return{""message":"welcome to my api"}
+  
+
+
 
 
 
