@@ -44,10 +44,50 @@
   
  #in vs main import body
 from fastapi.params import FastAPI
-  
+
+#extra main body from postman 
+#code in vs as below
  @app.post("/createposts")
  def create_posts(payload: dict=body(...)):
- return{""message":"welcome to my api"}
+    print(payload)
+ return{""message":"succefully created the post."}
   
 
+# get the bod details from postman to in vs main
+ @app.post("/createposts")
+ def create_posts(payload: dict=body(...)):
+    print(payload)
+ return{"new_post": f"title{payload['title']}content:{payload['content']}"}
+ 
+ 
+ 
+ 
+##need schema
+#in vs lib --> pydantic
+#in vs main import pydantic 
+from pydantic import BaseModel
+
+#in vs main
+#title str, content str,catagory post,boolean 
+#define a class
+app =FastAPI()
+
+class Post(BaseModel):
+  title: str
+  content: str
   
+#take this model to the app
+#def create_posts(post: Post): --> refer to (...: Post) padantic model
+@app.post("/createposts")
+ def create_posts(new_post: Post): 
+    print(new_post)
+ return{"data":"new post"}
+ 
+ #extra the properity
+  def create_posts(new_post: Post): 
+    print(new_post.title)
+    
+    
+ 
+ #assigned property is option
+ 
