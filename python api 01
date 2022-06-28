@@ -119,10 +119,16 @@ class Post(BaseModel):
   title: str
   content: str
   publshed :bool= True
-  rating : optional [int]=none
+  rating : optional[int] = None
   
   
   #padanic model into dictories
+  #print (new_post.dict())
+  @app.post("/createposts")
+ def create_posts(new_post: Post): 
+    print(new_post)
+    print (new_post.dict())
+ return{"data":"new post"}
   
-  
+ #padantic--> print(new_post) #dirctory--> print (new_post.dict())
  
