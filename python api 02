@@ -23,6 +23,8 @@ class Post(BaseModel):
     content: str
     published: bool=True
     rating: Optional[int] = None
+    
+    
 
 @app.get("/")
 async def root():
@@ -40,6 +42,13 @@ def create_posts(post : Post):
     return {"data":post}
     
     
-    
+  #save the post at memory
+  #create the variable -->my_posts= [] ([]list and with its properties)
+  #db it will create id
+  #it's after class before the @app
+  my_posts= [{"title": "title of post 1","content" :"content of post1","id":1}]
+  
+  
+  
     
    
