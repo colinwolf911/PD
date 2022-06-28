@@ -14,6 +14,7 @@ from click import option
 from fastapi import FastAPI
 from fastapi.params import Body
 from pydantic import BaseModel
+from random import randrange
 
 #create instance 
 app = FastAPI()
@@ -51,9 +52,24 @@ def create_posts(post : Post):
   my_posts= [{"title": "title of post 1","content" :"content of post1","id":1}]
   
   
-  
-  
-  
-  
-    
+  #update create retrive data from the postman and update
+  #convert padantic module to dictory 
+  my_posts.appent(post.dict()) 
+  #we need to have id for every entre due to we don't have a database therefore we used random import for id
+  from random import randrange
+  #post id convert to dictory
+  post_dict =post.dict()
+  #refer to id filed has been created
+  post_dict['id']=randrange(0,1000000000)
+  #sent back the post inculde the new id
+  my_posts.append()
+  return {"data":post_dict}
+ 
+ #code below as update       
+@app.post("/posts")
+def create_posts(post : Post):
+   post_dict=post.dict()
+   post_dict['id] =randrange(0,1000000000)
+   my_posts.append()
+  return {"data":post_dict}
    
