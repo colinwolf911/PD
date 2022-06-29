@@ -11,3 +11,5 @@
 def get_post(id):
    print(id)
    return{"post_detail": f"here is the post{id}"}
+
+#then back to postman to create new under our old collection
