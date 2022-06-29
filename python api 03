@@ -106,7 +106,7 @@ from fastapi import FastAPI , Response, status,HTTPException
    
 ##AUTOMATIVE PASS 
 @app.get("/posts/{id}")
-def get_post(id:int,response: Response):
+def get_post(id:int):
    post=find_post(id)
    #check the post
    if not post:
