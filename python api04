@@ -52,9 +52,10 @@ def find_index_post(id):
             
             
 
-##delete post
+
+#delete post
 @app.delete("/posts/{id}")
-def delete_post():
+def delete_post(id: int):
     index =find_index_post(id)
     
     my_posts.pop(index)
