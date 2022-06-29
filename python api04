@@ -75,3 +75,31 @@ def delete_post(id: int):
     #return{'message':'post delete'}
    
     return response(status_code=status.HTTP_204_NO_CONTENT)
+    
+    
+    
+    
+    ###update
+    #at postman->body ->raw ->text json
+    #then put at postman
+    
+    #####update
+@app.put("/posts/{id}")
+def update_post(id: int, post : Post):
+    #because we receive from the front
+    #we create schme such as a class
+    print (post)
+    index = find_index_post(id)
+    #return {'message': "updated post"}
+
+    ##find the index which has been updated
+    if index== None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND,detail=f"post with id  : {id} doesn't exist")
+    #get the post and convert it to dictory
+    post_dict=post.dict()
+    post_dict['id']=id
+    my_posts[index]=post_dict
+    return {"data": post_dict}
+
+    
+    
