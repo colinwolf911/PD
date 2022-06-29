@@ -67,6 +67,24 @@ def get_latest_post():
   post=my_posts[len(my_posts)-1]
   return{"details": post}
    
+ #issue router trying to find the paths and it go though all and it  find the first match
+ ##it can accidently match other routers
+ 
+ #fix the issue which cannot find 
+ #http response status
+ ##manuipulatity the respone
+ 
+ from fastapi import FastAPI, Response
+ #pass in as paramater as reposene
+ @app.get("/posts/{id}")
+def get_post(id:int,response: Response):
+   post=find_post(id)
+   #check the post
+   if not post:
+    response.status_code=404
+   return{"post_detail": post} 
+  
+  
    
    
    
