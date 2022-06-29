@@ -83,8 +83,17 @@ def get_post(id:int,response: Response):
    if not post:
     response.status_code=404
    return{"post_detail": post} 
-  
-  
+
+
+#pass in as paramater as reposene
+@app.get("/posts/{id}")
+def get_post(id:int,response: Response):
+   post=find_post(id)
+   #check the post
+   if not post:
+    response.status_code= 404
+    return {'message':f"post with id : {id} was not found"}
+   return{"post_detail": post} 
    
    
    
