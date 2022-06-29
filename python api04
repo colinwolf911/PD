@@ -59,4 +59,19 @@ def delete_post(id: int):
     index =find_index_post(id)
     
     my_posts.pop(index)
-    return{'message':'post delete'}
+    #return{'message':'post delete'}
+   
+    return response(status_code=status.HTTP_204_NO_CONTENT)
+    
+      
+ #update the status
+@app.delete("/posts/{id}",status_code=status.HTTP_204_NO_CONTENT)\
+def delete_post(id: int):
+    index =find_index_post(id)
+    #catch the error
+    if index== None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND,detail=f"post with id  : {id} doesn't exist")
+    my_posts.pop(index)
+    #return{'message':'post delete'}
+   
+    return response(status_code=status.HTTP_204_NO_CONTENT)
