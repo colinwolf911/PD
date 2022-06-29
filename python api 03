@@ -13,3 +13,19 @@ def get_post(id):
    return{"post_detail": f"here is the post{id}"}
 
 #then back to postman to create new under our old collection
+
+
+#find id
+#for p in my_posts: internation for  #if p["id"]==id;->id pass by p
+def find_post(id):
+ for p in my_posts:
+   if p["id"]==id;
+   return p
+   
+ #we can call the function
+ 
+@app.get("/posts/{id}")
+def get_post(id):
+   post=find_post(id)
+   return{"post_detail": post}
+  
