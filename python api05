@@ -1,0 +1,13 @@
+#document at swaggar ui
+#redict it's automative
+
+#create app folder in vs then -> _init_.py (it's python package)
+#move the main to the app folder 
+
+python -m uvicorn app.main:app --reload
+
+
+#database concept
+#DBMS
+#Relational mysql /postgresql/oracle/sql server
+#nonsql mongo db/dynamodb/oracle/ sql server
