@@ -23,9 +23,54 @@ def find_post(id):
    return p
    
  #we can call the function
- 
 @app.get("/posts/{id}")
 def get_post(id):
    post=find_post(id)
    return{"post_detail": post}
+   
+#issue that doesn't print out id
+#because we didn't give it a type under below source code
+#def get_post(id):
+# post=find_post(id)
+# return{"post_detail": post}
   
+  def get_post(id):
+   print(type(id))
+   post=find_post(id)
+   return{"post_detail": post}
+  
+ #print(type(id))->it's interger and here is a string 
+ #we need to convert it int -> post=find_post(id)-> post=find_post(int(id))
+###because each time we have a path and it will be always convert it into string 
+##we have to convert it manual
+
+#if we type string at postman request it will throw some error
+##therefore we want to provide some feedback to valid it 
+  def get_post(id): --> def get_post(id:int)
+   print(type(id))
+   post=find_post(int(id))-->post=find_post(id)
+   return{"post_detail": post}
+   
+ ##code for validation
+@app.get("/posts/{id}")
+def get_post(id:int):
+   post=find_post(id)
+   return{"post_detail": post} 
+  
+##def get_post(id:int): it can be anythig ->string def get_post(id:string):-> bool def get_post(id:bool):
+
+
+##how does the route works 
+##dummi app as below
+@app.get("/posts/latest")
+def get_latest_post():
+  post=my_posts[len(my_posts)-1]
+  return{"details": post}
+   
+   
+   
+   
+   
+   
+   
+   
