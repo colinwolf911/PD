@@ -1,0 +1,13 @@
+##check the status of new creating 
+def get_post()
+
+
+
+##delete the post
+@app.delete("/posts/{id}")
+def delete_post():
+  #deleing post
+  #find index in the arrya that has requireed id
+  #my_post.pop(index)
+  
+  
