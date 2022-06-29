@@ -9,5 +9,53 @@ def delete_post():
   #deleing post
   #find index in the arrya that has requireed id
   #my_post.pop(index)
+  #index= find_index_post(id)
+  #my_post.pop(index)
+  return {"message":"post was deleted"}
   
   
+
+
+from importlib.resources import contents
+from operator import truediv
+from telnetlib import STATUS
+from typing import Optional
+from click import option
+from fastapi import FastAPI, Response,status,HTTPException
+from fastapi.params import Body
+from pydantic import BaseModel
+from random import randrange
+
+#create instance 
+app = FastAPI()
+
+#define the class
+class Post(BaseModel):
+    title: str
+    content: str
+    published: bool=True
+    rating: Optional[int] = None
+
+my_posts=[{"title":"title of post1","content":"content of post1","id":1},{"title":"checkout","content":"phone","id":2}]
+
+
+def find_post(id):
+    for p in my_posts:
+        if p["id"]==id:
+            return p
+
+#Delete post
+def find_index_post(id):
+    for i ,p in enumerate(my_posts):
+        if p['id']==id:
+            return i
+            
+            
+
+##delete post
+@app.delete("/posts/{id}")
+def delete_post():
+    index =find_index_post(id)
+    
+    my_posts.pop(index)
+    return{'message':'post delete'}
