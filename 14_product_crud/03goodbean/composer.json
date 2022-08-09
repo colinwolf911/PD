@@ -1,0 +1,20 @@
+{
+    "name": "pd/03goodbean",
+    "autoload": {
+        "psr-4": {
+            "Pd\\03goodbean\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "colinwolf911",
+            "email": "colinisaacwolf@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload":{
+        "psr-4": {
+            "app\\":"./"
+        }
+    }
+}

@@ -1,0 +1,76 @@
+<tbody>
+    <?php foreach($products as $products){ ?>
+        <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+        
+        
+    <?php }  //issue there's two products and iteration two times and display two times ?>
+        
+     
+  </tbody>
+
+
+
+//create a button
+<p>
+<button class="btn btn-success">Create</button>
+</p>
+
+  
+  //save the file at the same one we have created 
+  <form action="create.php">
+  //the second one it will be method="post"
+  // which is much seceruity
+  
+
+  <form action=" " method="get">
+
+  //insert statement from user
+$pdo->prepare("INSERT INTO products (title,image,description,price,create_date)
+VALUE('$title',' ','$description',$price,'$date')")
+//exec plush those into the database
+//$pdo->exec("INSERT INTO products (title,image,description,price,create_date)
+VALUE('$title',' ','$description',$price,'$date')");//don't use it because it's unsafe 
+it could be sql injection such as fill the form to drop your table or delete your table from your your database
+
+//$statement=$pdo->prepare("INSERT INTO products (title,image,description,price,create_date)
+VALUE(:title,:image,:description,:price,:date)");
+
+//':title',$title is from the post 
+$statement->bindValue(':title',$title);
+$statement->bindValue(': ',$image);
+$statement->bindValue(':description',$description);
+$statement->bindValue(':price',$price);
+$statement->bindValue(':title',$title);
+$statement->bindValue(':date',$date);
+$statement->execute();
+
+
+//save the title 
+    <input type="text" name="title" class="form-control" value="<?php echo $title?>"> 
+
+//avoid the overide change the 'favicon.gif' to 
+  move_uploaded_file($image['tmp_name'],'favicon.gif')
+
+
+// <a href="delete.php?id=<?php echo $product['id']?>" type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+
+
+ <form style="display: inline-block" method="post" action="delete.php">
+          <input type="hidden" name="id" value="<?php echo $product['id']?>">
+      <button  type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+        </form>
+
+
+
+
+
+        <form style="display: inline-block" method="post" action="delete.php">
+          <input type="hidden" name="id" value="<?php echo $product['id']?>">
+          <button  type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+        </form>
+       
