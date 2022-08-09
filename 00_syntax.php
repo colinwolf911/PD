@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+Hello World
+<!--Echo HTML tags-->
+<?php 
+echo "welcome to the online shopping ";
+echo "on sale";
+?>
+<?php
+echo '<br>';
+echo "50%off";
+echo " on sale";
+echo '<br>';
+echo "right now";
+echo "<button>click me </button>";echo "buy now";
+?>
+</body>
+</html>
